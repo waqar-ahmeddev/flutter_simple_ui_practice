@@ -9,7 +9,7 @@ class _ScreenState extends State<Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-          appBar: AppBar(title: Center(child: Text('Welcome')),),
+          appBar: AppBar(backgroundColor:Colors.blueGrey,title:  Center(child: Text('Welcome',)),),
           body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
