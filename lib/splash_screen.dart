@@ -1,4 +1,5 @@
 import'package:flutter/material.dart';
+import 'screen.dart';
 class SplashScreen extends StatefulWidget {
    const SplashScreen({super.key});
 
@@ -39,23 +40,12 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
           ),
           SizedBox(height: 20),
-        ElevatedButton(
-  onPressed: () {
-    print('Hello world');
-  },
-  style: ElevatedButton.styleFrom(
-    padding: EdgeInsets.symmetric(
-      horizontal: 40, // width control
-      vertical: 18,),   // height control
-    backgroundColor: Colors.blue, // button ka color
-    foregroundColor: Colors.white, // text ka color
-     shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(20), // rounded corners
-  ),
-  ),
-  child: Text('Login', style: TextStyle(fontSize: 18),),
-)
-
+  ElevatedButton( 
+    onPressed: (){
+      Navigator.push(context, MaterialPageRoute(builder: (context) => Screen())); }, 
+      style: ElevatedButton.styleFrom( fixedSize: Size(200, 60), backgroundColor: Colors.purple,foregroundColor: Colors.white 
+), child: Text('Login', style: TextStyle(fontSize: 19),),
+  )
       
           
         ]
