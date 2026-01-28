@@ -1,13 +1,14 @@
 import'package:flutter/material.dart';
-import 'screen.dart';
+// import 'screen.dart';
 class SplashScreen extends StatefulWidget {
    const SplashScreen({super.key});
-
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+ var String = "";
+ bool changeButton = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Image.asset('assets/login.png',fit: BoxFit.cover,),
             SizedBox(height: 15,),
-            Text('Welcome Hoorain',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
+            Text('Welcome Hoorain ',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 20.0),
               child: Column(
@@ -42,24 +43,33 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             SizedBox(height: 20),
                SizedBox(height: 20),
-InkWell(
+   InkWell(
+  // onTap: () {
+       
+  //   Navigator.push(
+  //     context,
+  //     MaterialPageRoute(builder: (context) => Screen()),
+  //   );
+  // },
   onTap: () {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => Screen()),
-    );
+    setState(() {
+      changeButton = true;
+    });
   },
-  child: Container(
-    height: 50,
-    width: 150,
-    decoration: BoxDecoration(
-      color: Colors.deepPurple,
-      borderRadius: BorderRadius.circular(10),
-    ),
-    child: Center(
-      child: Text(
-        'Login',
-        style: TextStyle(color: Colors.white, fontSize: 18),
+  child: AnimatedContainer(
+    duration: Duration(milliseconds: 300),
+    child: Container(
+      height: 50,
+      width: 150,
+      decoration: BoxDecoration(
+        color: Colors.deepPurple,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Center(
+        child: changeButton ? Icon(Icons.done,color: Colors.white,) : Text(
+         'Login',
+          style: TextStyle(color: Colors.white, fontSize: 18),
+        ),
       ),
     ),
   ),
