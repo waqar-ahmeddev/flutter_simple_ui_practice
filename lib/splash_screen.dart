@@ -1,5 +1,5 @@
 import'package:flutter/material.dart';
-// import 'screen.dart';
+import 'screen.dart';
 class SplashScreen extends StatefulWidget {
    const SplashScreen({super.key});
   @override
@@ -44,18 +44,34 @@ class _SplashScreenState extends State<SplashScreen> {
             SizedBox(height: 20),
                SizedBox(height: 20),
    InkWell(
+    onTap: () {
+  setState(() {
+    changeButton = true; // Icon show hoga
+  });
+
+  // 500 milliseconds (0.5 sec) wait kar ke next screen
+  Future.delayed(Duration(milliseconds: 500), () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Screen()),
+    );
+  });
+},
+
   // onTap: () {
-       
   //   Navigator.push(
   //     context,
   //     MaterialPageRoute(builder: (context) => Screen()),
-  //   );
+  // );
+  //   setState(() {
+  //     changeButton = true;
+  //   });
   // },
-  onTap: () {
-    setState(() {
-      changeButton = true;
-    });
-  },
+  // onTap: () {
+  //   setState(() {
+  //     changeButton = true;
+  //   });
+  // },
   child: AnimatedContainer(
     duration: Duration(milliseconds: 300),
     child: Container(
@@ -66,7 +82,7 @@ class _SplashScreenState extends State<SplashScreen> {
         borderRadius: BorderRadius.circular(10),
       ),
       child: Center(
-        child: changeButton ? Icon(Icons.done,color: Colors.white,) : Text(
+        child: changeButton ? Icon(Icons.verified,color: Colors.white,) : Text(
          'Login',
           style: TextStyle(color: Colors.white, fontSize: 18),
         ),
