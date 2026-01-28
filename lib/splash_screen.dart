@@ -43,53 +43,51 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             SizedBox(height: 20),
                SizedBox(height: 20),
-   InkWell(
-    onTap: () {
-  setState(() {
-    changeButton = true; // Icon show hoga
-  });
-
-  // 500 milliseconds (0.5 sec) wait kar ke next screen
-  Future.delayed(Duration(milliseconds: 500), () {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => Screen()),
-    );
-  });
-},
-
-  // onTap: () {
-  //   Navigator.push(
-  //     context,
-  //     MaterialPageRoute(builder: (context) => Screen()),
-  // );
-  //   setState(() {
-  //     changeButton = true;
-  //   });
-  // },
-  // onTap: () {
-  //   setState(() {
-  //     changeButton = true;
-  //   });
-  // },
-  child: AnimatedContainer(
-    duration: Duration(milliseconds: 300),
-    child: Container(
-      height: 50,
-      width: 150,
-      decoration: BoxDecoration(
-        color: Colors.deepPurple,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Center(
-        child: changeButton ? Icon(Icons.verified,color: Colors.white,) : Text(
-         'Login',
-          style: TextStyle(color: Colors.white, fontSize: 18),
-        ),
-      ),
-    ),
-  ),
-),
+                    Material(
+                      color: Colors.deepPurple,
+                      borderRadius: BorderRadius.circular(10),
+                      child: InkWell(
+                        onTap: () async{
+                          setState(() {
+                            changeButton = true; // Icon show hoga
+                         });                                 
+                        await Future.delayed(Duration(seconds: 1));
+                        await Navigator.push( context,MaterialPageRoute(builder: (context) => Screen()),
+                           );
+                            setState(() {
+                               changeButton = false;
+                            });
+                          },
+                        
+                        // onTap: () {
+                        //   Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(builder: (context) => Screen()),
+                        // );
+                        //   setState(() {
+                        //     changeButton = true;
+                        //   });
+                        // },
+                        // onTap: () {
+                        //   setState(() {
+                        //     changeButton = true;
+                        //   });
+                        // },
+                           child: AnimatedContainer(
+                            duration: Duration(seconds: 5),
+                               child: Container(
+                               height: 50,
+                                width: 150,
+                         child: Center(
+                      child: changeButton ? Icon(Icons.verified,color: Colors.white,) : Text(
+                               'Login',
+                                style: TextStyle(color: Colors.white, fontSize: 18),
+                              ),
+                              ),
+                          ),
+                        ),
+                      ),
+                    ),
 //   ElevatedButton( 
           //     onPressed: (){
           //       Navigator.push(context, MaterialPageRoute(builder: (context) => Screen())); }, 
