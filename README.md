@@ -14,5 +14,13 @@ This is a simple **Flutter app** where users log in and then see a list of produ
 - Modern UI with rounded card corners and properly fitted images
 ## 🔐 Authentication – Login Screen
  - A modern login interface built with Flutter, featuring rounded corners, form validation, and a clean UI.
+   
 ![image alt](https://github.com/waqar-ahmeddev/flutter_simple_ui_practice/blob/e10caa4b8ed96f8aee4990457f6a324192c7035f/login.png)
+### 🛍️ Product List Screen (Emulator)
+ - Modern and clean product listing UI with rounded cards, images, and pricing details.
+   
+![Product Screen](### 🛍️ Product List Screen (Emulator)
+Modern and clean product listing UI with rounded cards, images, and pricing details.
+
+![Product Screen](assets/product.png))
 
