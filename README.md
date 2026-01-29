@@ -14,3 +14,4 @@ This is a simple **Flutter app** where users log in and then see a list of produ
 - Modern UI with rounded card corners and properly fitted images
 ### Login Screen
 ![Login Screen](screenshots/login.png)
+
