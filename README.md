@@ -1,16 +1,14 @@
-# login_ui_modern
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Flutter Products App.
+This is a simple **Flutter app** where users log in and then see a list of products. The products are dynamically loaded from the item.dart file and displayed with a modern, clean UI.
+## Features 
+- Login screen with username and password validation
+- Animated login button with success icon
+- Products list displayed using ListView.builder
+- Images loaded from URLs with a fallback icon if an image fails to load
+- Each product card shows:
+  - Product image
+    - Product name (bold & large)
+      - Description
+        - Price (bold)
+- Drawer with user account information and navigation options
+- Modern UI with rounded card corners and properly fitted images
