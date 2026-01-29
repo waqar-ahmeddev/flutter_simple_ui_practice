@@ -12,5 +12,4 @@ This is a simple **Flutter app** where users log in and then see a list of produ
         - Price (bold)
 - Drawer with user account information and navigation options
 - Modern UI with rounded card corners and properly fitted images
-
-
+![image alt](https://github.com/waqar-ahmeddev/flutter_simple_ui_practice/blob/e10caa4b8ed96f8aee4990457f6a324192c7035f/login.png)
