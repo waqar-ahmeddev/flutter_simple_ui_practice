@@ -22,5 +22,5 @@ This is a simple **Flutter app** where users log in and then see a list of produ
 ![Product Screen](### 🛍️ Product List Screen (Emulator)
 Modern and clean product listing UI with rounded cards, images, and pricing details.
 
-![Product Screen](assets/product.png))
+![Product Screen](https://github.com/waqar-ahmeddev/flutter_simple_ui_practice/blob/main/product.png?raw=true)
 
