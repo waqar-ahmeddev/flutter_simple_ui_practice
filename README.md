@@ -24,6 +24,10 @@ This is a simple **Flutter app** where users log in and then see a list of produ
 The screenshot below shows the product listing screen using a grid layout.
 
 ![image alt](https://github.com/waqar-ahmeddev/flutter_simple_ui_practice/blob/c70d77d4683ae31ec164e8b34708f038e48435f4/GridView.png)
+### 🛍️ Product List Screen(Modified product screen layout for better user experience) (Emulator)
+
+![image alt](https://github.com/waqar-ahmeddev/flutter_simple_ui_practice/blob/73b12983ef53d69427143a67e0ef11acd694e8f4/Catalog.png)
+
 
 
 
