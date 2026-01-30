@@ -22,49 +22,121 @@ class _ScreenState extends State<Screen> {
         ),
         iconTheme: const IconThemeData(color: Colors.black),
       ),
-
-      // 🔥 BODY: PRODUCTS LIST
-      body: ListView.builder(
-         itemCount: products.length,
-         itemBuilder: (context, index) {
+       body: GridView.builder(
+  padding: const EdgeInsets.all(12),
+  itemCount: products.length,
+  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+    crossAxisCount: 2, // 2 items side by side
+    crossAxisSpacing: 12,
+    mainAxisSpacing: 12,
+    childAspectRatio: 0.7,
+  ),
+  itemBuilder: (context, index) {
     final item = products[index];
 
     return Card(
-      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      child: ListTile(
-        leading: ClipRRect(
-          borderRadius: BorderRadius.circular(8),
-          child: Image.network(
-            item.image,
-            width: 60,
-            height: 60,
-            fit: BoxFit.cover,
-            errorBuilder: (context, error, stackTrace) {
-              return Container(
-                width: 60,
-                height: 60,
-                color: Colors.grey.shade300,
-                child: const Icon(Icons.image_not_supported),
-              );
-            },
+      elevation: 4,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // 🖼 Image
+          ClipRRect(
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
+            child: Image.network(
+              item.image,
+              height: 140,
+              width: double.infinity,
+              fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) {
+                return Container(
+                  height: 140,
+                  color: Colors.grey.shade300,
+                  child: const Icon(Icons.image_not_supported),
+                );
+              },
+            ),
           ),
-        ),
-        title: Text(
-          item.name,
-          style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 18),
-        ),
-        subtitle: Text(item.desc,),
-        trailing: Text(
-          "\$${item.price}",
-          style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 18),
-        ),
+
+          // 📦 Product Info
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  item.name,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  item.desc,
+                  style: const TextStyle(fontSize: 13),
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  "\$${item.price}",
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                    color: Colors.deepPurple,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   },
 ),
 
 
-      // 🟣 DRAWER (SAME AS BEFORE)
+//       // 🔥 BODY: PRODUCTS LIST
+//       body: ListView.builder(
+//          itemCount: products.length,
+//          itemBuilder: (context, index) {
+//     final item = products[index];
+
+
+//     return Card(
+//       margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+//       child: ListTile(
+//         leading: ClipRRect(
+//           borderRadius: BorderRadius.circular(8),
+//           child: Image.network(
+//             item.image,
+//             width: 60,
+//             height: 60,
+//             fit: BoxFit.cover,
+//             errorBuilder: (context, error, stackTrace) {
+//               return Container(
+//                 width: 60,
+//                 height: 60,
+//                 color: Colors.grey.shade300,
+//                 child: const Icon(Icons.image_not_supported),
+//               );
+//             },
+//           ),
+//         ),
+//         title: Text(
+//           item.name,
+//           style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 18),
+//         ),
+//         subtitle: Text(item.desc,),
+//         trailing: Text(
+//           "\$${item.price}",
+//           style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 18),
+//         ),
+//       ),
+//     );
+//   },
+// ),      // 🟣 DRAWER (SAME AS BEFORE)
       drawer: Drawer(
         backgroundColor: Colors.deepPurple,
         child: ListView(
