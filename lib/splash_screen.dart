@@ -6,7 +6,6 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 class _SplashScreenState extends State<SplashScreen> {
- var String = "";
  bool changeButton = false;
  final _formkey = GlobalKey<FormState>();
  movetoHome(BuildContext context) async{
